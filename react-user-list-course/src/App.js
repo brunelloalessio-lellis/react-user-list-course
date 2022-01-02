@@ -1,20 +1,22 @@
-import { useState } from 'react';
-import './App.css';
-import UserForm from './components/UserForm';
-import UserList from './components/UserList';
+import { useState } from "react";
+import "./App.css";
+import UserForm from "./components/UserForm";
+import UserList from "./components/UserList";
 
 function App() {
-
-  const [userList, setUserList] = useState([])
+  const [userList, setUserList] = useState([]);
 
   const onAddUserHandler = (user) => {
-    console.log(user)
-  }
+    console.log(user);
+    setUserList((prevState) => {
+      return [...prevState, user];
+    });
+  };
 
   return (
     <div className="App">
-      <UserForm onAddUserTap={onAddUserHandler}/>
-      <UserList userList={userList}/>
+      <UserForm onAddUserTap={onAddUserHandler} />
+      <UserList userList={userList} />
     </div>
   );
 }

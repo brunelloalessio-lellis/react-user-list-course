@@ -1,9 +1,11 @@
-const UserListItem = props => {
-    return (
-            <div>
-            {props.username} ({props.age} years old)
-            </div>
-    )
-}
+import "./UserListItem.css";
 
-export default UserListItem
+const UserListItem = (props) => {
+  return (
+    <div className="user-list-item">
+      {props.username} ({props.age} years old)
+    </div>
+  );
+};
+
+export default UserListItem;
